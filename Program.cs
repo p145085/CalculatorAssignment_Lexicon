@@ -48,6 +48,12 @@
                     Console.ReadLine();
                     break;
                 case "/":
+                    if (num2 == 0)
+                    {
+                        Console.WriteLine("Cannot divide by zero (0).");
+                        Console.ReadLine();
+                        break;
+                    }
                     result = num1 / num2;
                     Console.WriteLine(result);
                     Console.ReadLine();
