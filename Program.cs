@@ -2,7 +2,25 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+
+        static void printMenu()
+        {
+            Console.Clear();
+            Console.WriteLine("Make a selection.");
+            Console.WriteLine("1. Calculator.");
+        }
+
+        static void checkMenuSelection(string menuInput)
+        {
+            switch (menuInput)
+            {
+                case "1":
+                    calculator();
+                    break;
+            }
+        }
+
+        static void calculator()
         {
             Console.WriteLine("Enter your first number. Only whole numbers are valid.");
             int num1 = Convert.ToInt32(Console.ReadLine());
@@ -17,28 +35,47 @@
                 case "+":
                     result = num1 + num2;
                     Console.WriteLine(result);
+                    Console.ReadLine();
                     break;
                 case "-":
                     result = num1 - num2;
                     Console.WriteLine(result);
+                    Console.ReadLine();
                     break;
                 case "*":
                     result = num1 * num2;
                     Console.WriteLine(result);
+                    Console.ReadLine();
                     break;
                 case "/":
                     result = num1 / num2;
                     Console.WriteLine(result);
+                    Console.ReadLine();
                     break;
                 case "%":
                     result = num1 % num2;
                     Console.WriteLine(result);
+                    Console.ReadLine();
                     break;
 
                 default:
                     Console.WriteLine("Invalid.");
                     break;
             }
+        }
+
+        static void Main(string[] args)
+        {
+            bool loop = true;
+            string menuInput;
+            while (loop)
+            {
+                printMenu();
+                checkMenuSelection(Console.ReadLine());
+
+            }
+
+            
         }
     }
 }
